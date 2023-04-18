@@ -14,8 +14,15 @@ class PhotoFlash extends StatefulWidget {
 class _PhotoFlashState extends State<PhotoFlash> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Center(
+            child: Text("Flash Photos"),
+          ),
+          backgroundColor: Colors.grey,
+        ),
+      ),
     );
   }
 }
