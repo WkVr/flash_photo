@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +14,20 @@ class PhotoFlash extends StatefulWidget {
 }
 
 class _PhotoFlashState extends State<PhotoFlash> {
+  String imageToRender = 'images/landscape1.jpg';
+  int getRandom(max) {
+    return Random().nextInt(max) + 1;
+  }
+
   @override
   Widget build(BuildContext context) {
-    String imageToRender = 'images/landscape1.jpg';
+    void getImage(Orientation orientation) {
+      print(orientation);
+      setState(() {
+        imageToRender =
+            'images/${orientation == Orientation.landscape ? 'landscape${getRandom(9)}' : 'portrait${getRandom(19)}'}.jpg';
+      });
+    }
 
     return MaterialApp(
       home: Scaffold(
@@ -28,7 +41,7 @@ class _PhotoFlashState extends State<PhotoFlash> {
         body: OrientationBuilder(
           builder: (context, orientation) {
             return TextButton(
-              onPressed: () => {},
+              onPressed: () => getImage(orientation),
               child: Center(
                 child: Image.asset(imageToRender),
               ),
