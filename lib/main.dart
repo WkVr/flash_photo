@@ -16,11 +16,15 @@ class _PhotoFlashState extends State<PhotoFlash> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
           title: const Center(
             child: Text("Flash Photos"),
           ),
           backgroundColor: Colors.grey,
+        ),
+        body: Center(
+          child: Image.asset('images/landscape1.jpg'),
         ),
       ),
     );
