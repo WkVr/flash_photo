@@ -22,7 +22,6 @@ class _PhotoFlashState extends State<PhotoFlash> {
   @override
   Widget build(BuildContext context) {
     void getImage(Orientation orientation) {
-      print(orientation);
       setState(() {
         imageToRender =
             'images/${orientation == Orientation.landscape ? 'landscape${getRandom(9)}' : 'portrait${getRandom(19)}'}.jpg';
