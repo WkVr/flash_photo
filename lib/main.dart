@@ -14,6 +14,8 @@ class PhotoFlash extends StatefulWidget {
 class _PhotoFlashState extends State<PhotoFlash> {
   @override
   Widget build(BuildContext context) {
+    String imageToRender = 'images/landscape1.jpg';
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey.shade300,
@@ -23,8 +25,15 @@ class _PhotoFlashState extends State<PhotoFlash> {
           ),
           backgroundColor: Colors.grey,
         ),
-        body: Center(
-          child: Image.asset('images/landscape1.jpg'),
+        body: OrientationBuilder(
+          builder: (context, orientation) {
+            return TextButton(
+              onPressed: () => {},
+              child: Center(
+                child: Image.asset(imageToRender),
+              ),
+            );
+          },
         ),
       ),
     );
